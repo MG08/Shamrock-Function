@@ -1,0 +1,157 @@
+#include<iostream>
+using namespace std;
+
+#include <SFML/Graphics.hpp>
+
+//function declaration
+void drawShamrock(sf::RenderWindow& window, int x, int y);
+
+void drawShamrock2(sf::RenderWindow& window, int x, int y);
+
+void drawShamrock3(sf::RenderWindow& window, int x, int y);
+
+void rainbow(sf::RenderWindow& window, int x, int y);
+
+int main()
+{
+	sf::RenderWindow window(sf::VideoMode(800, 800), "Shamrocks"); //set up game screen
+
+	while (window.isOpen())//OMG GAME LOOP#######################################################
+	{
+		//input section--------------------------------
+		sf::Event event;
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close(); //let you close by pressing the top right "x" button
+		}
+
+		//render section-------------------------------
+		window.clear();
+
+		drawShamrock(window, 200, 200);//function call
+		drawShamrock(window, 500, 500);//function call
+		drawShamrock2(window, 400, 200);
+
+		drawShamrock3(window, 300, 400);
+		drawShamrock3(window, 500, 100);
+
+		rainbow(window, 200, 600);
+
+		rainbow(window, 300, 700);
+
+		rainbow(window, 500, 300);
+
+		window.display();
+
+	}//end game loop#############################################################################
+
+} //end main
+
+
+//function definition
+void drawShamrock(sf::RenderWindow& window, int x, int y) {
+	sf::CircleShape circle;
+	sf::RectangleShape rect;
+	circle.setRadius(30);
+	circle.setFillColor((sf::Color(0, 150, 0)));
+	circle.setPosition(x, y);
+	window.draw(circle);
+
+	circle.setRadius(30);
+	circle.setFillColor((sf::Color(0, 150, 0)));
+	circle.setPosition(x + 50, y);
+	window.draw(circle);
+
+	circle.setRadius(30);
+	circle.setFillColor((sf::Color(0, 150, 0)));
+	circle.setPosition(x + 25, y - 50);
+	window.draw(circle);
+
+	rect.setPosition(x + 45, y);
+	rect.setFillColor(sf::Color(0, 150, 0));
+	rect.setSize(sf::Vector2f(20, 80));
+	window.draw(rect);
+}
+
+void drawShamrock2(sf::RenderWindow& window, int x, int y) {
+	sf::CircleShape circle;
+	sf::RectangleShape rect;
+	circle.setRadius(30);
+	circle.setFillColor((sf::Color(0, 100, 150)));
+	circle.setPosition(x, y);
+	window.draw(circle);
+
+	circle.setRadius(30);
+	circle.setFillColor((sf::Color(0, 100, 150)));
+	circle.setPosition(x + 50, y);
+	window.draw(circle);
+
+	circle.setRadius(30);
+	circle.setFillColor((sf::Color(0, 100, 150)));
+	circle.setPosition(x + 25, y - 50);
+	window.draw(circle);
+
+	rect.setPosition(x + 45, y);
+	rect.setFillColor(sf::Color(0, 100, 150));
+	rect.setSize(sf::Vector2f(20, 80));
+	window.draw(rect);
+}
+
+void drawShamrock3(sf::RenderWindow& window, int x, int y) {
+	sf::CircleShape circle;
+	sf::RectangleShape rect;
+	circle.setRadius(30);
+	circle.setFillColor((sf::Color(0, 100, 0)));
+	circle.setPosition(x, y);
+	window.draw(circle);
+
+	circle.setRadius(30);
+	circle.setFillColor((sf::Color(0, 100, 0)));
+	circle.setPosition(x + 50, y);
+	window.draw(circle);
+
+	circle.setRadius(30);
+	circle.setFillColor((sf::Color(0, 100, 0)));
+	circle.setPosition(x + 25, y - 50);
+	window.draw(circle);
+
+	rect.setPosition(x + 45, y);
+	rect.setFillColor(sf::Color(0, 100, 0));
+	rect.setSize(sf::Vector2f(20, 80));
+	window.draw(rect);
+}
+
+void rainbow(sf::RenderWindow& window, int x, int y) {
+	sf::CircleShape circle;
+	sf::RectangleShape rect;
+	circle.setRadius(50);
+	circle.setFillColor((sf::Color(237, 19, 19)));
+	circle.setPosition(x + 35, y - 32.5);
+	window.draw(circle);
+
+	circle.setRadius(45);
+	circle.setFillColor((sf::Color(237, 237, 19)));
+	circle.setPosition(x + 40, y - 27.5);
+	window.draw(circle);
+
+	circle.setRadius(40);
+	circle.setFillColor((sf::Color(26, 237, 19)));
+	circle.setPosition(x + 43.5, y - 22.5);
+	window.draw(circle);
+
+	circle.setRadius(35);
+	circle.setFillColor((sf::Color(23, 19, 237)));
+	circle.setPosition(x + 48.5, y - 15);
+	window.draw(circle);
+
+	circle.setRadius(30);
+	circle.setFillColor((sf::Color(131, 52, 235)));
+	circle.setPosition(x + 52.5, y - 10);
+	window.draw(circle);
+	
+	rect.setPosition(x + 30, y + 15);
+	rect.setFillColor(sf::Color(0, 0, 0));
+	rect.setSize(sf::Vector2f(120, 80));
+	window.draw(rect);
+}
